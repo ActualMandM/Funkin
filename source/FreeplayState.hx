@@ -32,7 +32,7 @@ class FreeplayState extends MusicBeatState
 	{
 		songs = CoolUtil.coolTextFile('assets/data/freeplaySonglist.txt');
 
-		/* 
+		/*
 			if (FlxG.sound.music != null)
 			{
 				if (!FlxG.sound.music.playing)
@@ -46,41 +46,41 @@ class FreeplayState extends MusicBeatState
 		isDebug = true;
 		#end
 
-		if (StoryMenuState.weekUnlocked[2] || isDebug)
-		{
-			songs.push('Spookeez');
-			songs.push('South');
-			songs.push('Monster');
-		}
-
-		if (StoryMenuState.weekUnlocked[3] || isDebug)
-		{
-			songs.push('Pico');
-			songs.push('Philly');
-			songs.push('Blammed');
-		}
-
-		if (StoryMenuState.weekUnlocked[4] || isDebug)
-		{
-			songs.push('Satin-Panties');
-			songs.push('High');
-			songs.push('Milf');
-		}
-
-		if (StoryMenuState.weekUnlocked[5] || isDebug)
-		{
-			songs.push('Cocoa');
-			songs.push('Eggnog');
-			songs.push('Winter-Horrorland');
-		}
-
-		if (StoryMenuState.weekUnlocked[6] || isDebug)
-		{
-			songs.push('Senpai');
-			songs.push('Roses');
-			songs.push('Thorns');
-			// songs.push('Winter-Horrorland');
-		}
+		// if (StoryMenuState.weekUnlocked[2] || isDebug)
+		// {
+		// 	songs.push('Spookeez');
+		// 	songs.push('South');
+		// 	songs.push('Monster');
+		// }
+		//
+		// if (StoryMenuState.weekUnlocked[3] || isDebug)
+		// {
+		// 	songs.push('Pico');
+		// 	songs.push('Philly');
+		// 	songs.push('Blammed');
+		// }
+		//
+		// if (StoryMenuState.weekUnlocked[4] || isDebug)
+		// {
+		// 	songs.push('Satin-Panties');
+		// 	songs.push('High');
+		// 	songs.push('Milf');
+		// }
+		//
+		// if (StoryMenuState.weekUnlocked[5] || isDebug)
+		// {
+		// 	songs.push('Cocoa');
+		// 	songs.push('Eggnog');
+		// 	songs.push('Winter-Horrorland');
+		// }
+		//
+		// if (StoryMenuState.weekUnlocked[6] || isDebug)
+		// {
+		// 	songs.push('Senpai');
+		// 	songs.push('Roses');
+		// 	songs.push('Thorns');
+		// 	// songs.push('Winter-Horrorland');
+		// }
 
 		// LOAD MUSIC
 
@@ -132,7 +132,7 @@ class FreeplayState extends MusicBeatState
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
 
 		// JUST DOIN THIS SHIT FOR TESTING!!!
-		/* 
+		/*
 			var md:String = Markdown.markdownToHtml(Assets.getText('CHANGELOG.md'));
 
 			var texFel:TextField = new TextField();
