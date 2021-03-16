@@ -631,7 +631,7 @@ class PlayState extends MusicBeatState
 		strumLine.scrollFactor.set();
 
 		strumLineNotes = new FlxTypedGroup<FlxSprite>();
-		add(strumLineNotes);
+		//add(strumLineNotes);
 
 		playerStrums = new FlxTypedGroup<FlxSprite>();
 
@@ -692,11 +692,11 @@ class PlayState extends MusicBeatState
 
 		iconP1 = new HealthIcon(SONG.player1, true);
 		iconP1.y = healthBar.y - (iconP1.height / 2);
-		add(iconP1);
+		//add(iconP1);
 
 		iconP2 = new HealthIcon(SONG.player2, false);
 		iconP2.y = healthBar.y - (iconP2.height / 2);
-		add(iconP2);
+		//add(iconP2);
 
 		strumLineNotes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -1872,6 +1872,60 @@ class PlayState extends MusicBeatState
 
 		var controlArray:Array<Bool> = [leftP, downP, upP, rightP];
 
+		FlxG.log.add('hold timer: ' + boyfriend.holdTimer);
+
+		if(leftP) {
+			boyfriend.playAnim('singLEFT', true);
+			dad.playAnim('singLEFT', true);
+			boyfriend.holdTimer = 0;
+		} else if (downP) {
+			boyfriend.playAnim('singDOWN', true);
+			dad.playAnim('singDOWN', true);
+			boyfriend.holdTimer = 0;
+		} else if (upP) {
+			boyfriend.playAnim('singUP', true);
+			dad.playAnim('singUP', true);
+			boyfriend.holdTimer = 0;
+		} else if (rightP) {
+			boyfriend.playAnim('singRIGHT', true);
+			dad.playAnim('singRIGHT', true);
+			boyfriend.holdTimer = 0;
+		}
+
+		if(left) {
+			boyfriend.playAnim('singLEFT', false);
+			dad.playAnim('singLEFT', false);
+		} else if (down) {
+			boyfriend.playAnim('singDOWN', false);
+			dad.playAnim('singDOWN', false);
+		} else if (up) {
+			boyfriend.playAnim('singUP', false);
+			dad.playAnim('singUP', false);
+		} else if (right) {
+			boyfriend.playAnim('singRIGHT', false);
+			dad.playAnim('singRIGHT', false);
+		}
+
+		if(boyfriend.holdTimer > .3) {
+			if(left) {
+				boyfriend.playAnim('singLEFT', true);
+				dad.playAnim('singLEFT', true);
+				boyfriend.holdTimer = 0;
+			} else if (down) {
+				boyfriend.playAnim('singDOWN', true);
+				dad.playAnim('singDOWN', true);
+				boyfriend.holdTimer = 0;
+			} else if (up) {
+				boyfriend.playAnim('singUP', true);
+				dad.playAnim('singUP', true);
+				boyfriend.holdTimer = 0;
+			} else if (right) {
+				boyfriend.playAnim('singRIGHT', true);
+				dad.playAnim('singRIGHT', true);
+				boyfriend.holdTimer = 0;
+			}
+		}
+
 		// FlxG.watch.addQuick('asdfa', upP);
 		// if ((upP || rightP || downP || leftP) && !boyfriend.stunned && generatedMusic)
 		if ((upP || rightP || downP || leftP) && !inCutscene && !boyfriend.stunned && generatedMusic)
@@ -1898,7 +1952,7 @@ class PlayState extends MusicBeatState
 			{
 				var daNote = possibleNotes[0];
 
-				if (perfectMode)
+				// if (perfectMode)
 					noteCheck(true, daNote);
 
 				// Jump notes
@@ -2071,17 +2125,21 @@ class PlayState extends MusicBeatState
 				boyfriend.stunned = false;
 			});
 
-			switch (direction)
-			{
-				case 0:
-					boyfriend.playAnim('singLEFT', true);
-				case 1:
-					boyfriend.playAnim('singDOWN', true);
-				case 2:
-					boyfriend.playAnim('singUP', true);
-				case 3:
-					boyfriend.playAnim('singRIGHT', true);
-			}
+			// switch (direction)
+			// {
+			// 	case 0:
+			// 		boyfriend.playAnim('singLEFT', true);
+			// 		dad.playAnim('singLEFT', true);
+			// 	case 1:
+			// 		boyfriend.playAnim('singDOWN', true);
+			// 		dad.playAnim('singDOWN', true);
+			// 	case 2:
+			// 		boyfriend.playAnim('singUP', true);
+			// 		dad.playAnim('singUP', true);
+			// 	case 3:
+			// 		boyfriend.playAnim('singRIGHT', true);
+			// 		dad.playAnim('singRIGHT', true);
+			// }
 		}
 	}
 
