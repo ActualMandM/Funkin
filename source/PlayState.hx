@@ -1890,6 +1890,8 @@ class PlayState extends MusicBeatState
 			boyfriend.playAnim('singRIGHT', true);
 			dad.playAnim('singRIGHT', true);
 			boyfriend.holdTimer = 0;
+		} else if (FlxG.keys.justPressed.E) {
+			boyfriend.playAnim('hey', false);
 		}
 
 		if(left) {
@@ -1923,7 +1925,7 @@ class PlayState extends MusicBeatState
 				boyfriend.playAnim('singRIGHT', true);
 				dad.playAnim('singRIGHT', true);
 				boyfriend.holdTimer = 0;
-			}
+			} 
 		}
 
 		// FlxG.watch.addQuick('asdfa', upP);
